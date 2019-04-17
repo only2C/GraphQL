@@ -8,6 +8,7 @@ import {
   GraphQLInt,
   GraphQLNonNull
 } from 'graphql'
+import Api from '@/api/api'
 
 export default {
   name: 'demo',
@@ -18,18 +19,8 @@ export default {
       postD: ''
     }
   },
-  mounted () {
-    var animals = [
-      {
-        name: 'dog',
-        legs: 4
-      },
-      {
-        name: 'fish',
-        tailColor: 'red'
-      }
-    ]
-
+  async mounted () {
+    const animals = await Api.getData()
     const Animal = new GraphQLInterfaceType({
       name: 'Animal',
       description: '接口',

@@ -1,10 +1,10 @@
 const axios = require('axios')
 
-const api = 'http://192.168.140.37:3000/'
+const api = 'http://192.168.140.37:8080/'
 module.exports = {
   getData: function () {
-    return axios.get(api + 'v1/feeds').then((response) => {
-      return response.data
+    return axios.get(api + 'graph').then((response) => {
+      return response.data.data
     })
   },
   postData: function () {
