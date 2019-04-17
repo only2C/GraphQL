@@ -81,10 +81,14 @@ export default {
       query: Query
     })
     graphql(schema, '{animals{name}}').then((response) => {
-      console.log('===================')
+      console.log('=====无参类型====')
       console.log(response)
     })
     console.log(schema)
+    graphql(schema, '{animalSearch(text:"dog"){name}}').then((response) => {
+      console.log('=====带参数类型=========')
+      console.log(response)
+    })
   },
   methods: {
     initSource () {
