@@ -17,8 +17,10 @@
     "axios": "^0.18.0",
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
+    "fs": "0.0.1-security",
     "graphql": "^14.2.1",
     "intact-vue": "^0.4.17",
+    "sequelize": "^5.7.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

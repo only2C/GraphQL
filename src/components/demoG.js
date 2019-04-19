@@ -9,6 +9,7 @@ import {
   GraphQLNonNull
 } from 'graphql'
 import Api from '@/api/api'
+var fs = require('fs')
 export default {
   name: 'demo',
   data () {
@@ -87,6 +88,13 @@ export default {
     graphql(schema, '{animalSearch(text:"dog"){name}}').then((response) => {
       console.log('=====带参数类型=========')
       console.log(response)
+    })
+    // 测试文件异步读取
+    fs.readFile('file1.json', function (err, data) {
+      if (err) {
+        return console.error(err)
+      }
+      console.log('异步读取: ' + data.toString())
     })
   },
   methods: {
